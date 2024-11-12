@@ -26,6 +26,7 @@ labels:
   80: "pole"
   81: "traffic-sign"
   99: "other-object"
+  53: "error-object"
   252: "moving-car"
   253: "moving-bicyclist"
   254: "moving-person"

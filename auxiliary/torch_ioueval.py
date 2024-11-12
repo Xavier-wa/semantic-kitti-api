@@ -4,7 +4,7 @@
 import sys
 import torch
 import numpy as np
-
+import pdb
 
 class iouEval:
   def __init__(self, n_classes, ignore=None):
@@ -57,6 +57,8 @@ class iouEval:
 
   def getStats(self):
     # remove fp from confusion on the ignore classes cols
+
+    pdb.set_trace()
     conf = self.conf_matrix.clone().double()
     conf[:, self.ignore] = 0
 
@@ -67,6 +69,7 @@ class iouEval:
     return tp, fp, fn
 
   def getIoU(self):
+  
     tp, fp, fn = self.getStats()
     intersection = tp
     union = tp + fp + fn + 1e-15

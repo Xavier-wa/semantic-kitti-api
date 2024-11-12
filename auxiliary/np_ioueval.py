@@ -3,7 +3,7 @@
 
 import sys
 import numpy as np
-
+import pdb
 
 class iouEval:
   def __init__(self, n_classes, ignore=None):
@@ -46,7 +46,7 @@ class iouEval:
     # remove fp from confusion on the ignore classes cols
     conf = self.conf_matrix.copy()
     conf[:, self.ignore] = 0
-
+    # pdb.set_trace()
     # get the clean stats
     tp = np.diag(conf)
     fp = conf.sum(axis=1) - tp
